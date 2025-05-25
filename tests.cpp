@@ -83,23 +83,23 @@ TEST_CASE("toString")
   REQUIRE(str2.toString() == "GT");
 }
 
-// TEST_CASE("== test 1")
-// {
-//   cout << "4a: operator ==" << endl;
+TEST_CASE("== test 1")
+{
+  cout << "4a: operator ==" << endl;
 
-//   // Verify constructor actually stores the correct data
-//   DNAStrand str1("ACGTAGCT");
+  // Verify constructor actually stores the correct data
+  DNAStrand str1("ACGTAGCT");
 
-//   // If you put the == inside the REQUIRE it will not compile without <<
-//   bool isMatch = (str1 == DNAStrand("ACGTAGCT"));
-//   REQUIRE(isMatch);
+  // If you put the == inside the REQUIRE it will not compile without <<
+  bool isMatch = (str1 == DNAStrand("ACGTAGCT"));
+  REQUIRE(isMatch);
 
-//   DNAStrand str2("AACC");
-//   bool isMatch2 = (str2 == DNAStrand("AACC"));
-//   bool isMatch3 = (str2 == DNAStrand("AAGC"));
-//   REQUIRE(isMatch2);
-//   REQUIRE(!isMatch3);
-// }
+  DNAStrand str2("AACC");
+  bool isMatch2 = (str2 == DNAStrand("AACC"));
+  bool isMatch3 = (str2 == DNAStrand("AAGC"));
+  REQUIRE(isMatch2);
+  REQUIRE(!isMatch3);
+}
 
 // TEST_CASE("== test 2")
 // {

@@ -90,6 +90,21 @@ std::string DNAStrand::toString() const {
   return stringForm;
 }
 
+// Comparison Operator ==
+bool DNAStrand::operator==(const DNAStrand& other) const {
+  // Check lengths first
+  if (this->length != other.length) {
+    return false;
+  }
+
+  for (int i = 0; i < length; ++i) {
+    if (baseToChar(this->bases[i]) != baseToChar(other.bases[i]))
+      return false;
+  }
+
+  return true;
+}
+
 // Destructor
 DNAStrand::~DNAStrand() {
   delete[] bases;
