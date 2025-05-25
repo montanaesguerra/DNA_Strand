@@ -53,7 +53,7 @@ DNAStrand::DNAStrand(const std::string& startingString) {
   //Set the length of DNAString
   length = startingString.length();
 
-  //Set the Bases array to the lenth of startingString
+  //Set the Bases array to the length of startingString
   bases = new Base[length];
 
   for (int i = 0; i < length; ++i) {
