@@ -113,22 +113,22 @@ TEST_CASE("== test 2")
   REQUIRE(!isMatch2);
 }
 
-// TEST_CASE("Copy constructor")
-// {
-//   cout << "5: Copy constructor..." << endl;
-//   DNAStrand str1("ACGTAGCT");
+TEST_CASE("Copy constructor")
+{
+  cout << "5: Copy constructor..." << endl;
+  DNAStrand str1("ACGTAGCT");
 
-//   {
-//     // new scope
-//     DNAStrand str2(str1); // Call copy ctor
-//     bool isMatch = (str1 == str2);
-//     REQUIRE(isMatch);
-//     // str2 goes away when we leave this block...
-//   }
+  {
+    // new scope
+    DNAStrand str2(str1); // Call copy ctor
+    bool isMatch = (str1 == str2);
+    REQUIRE(isMatch);
+    // str2 goes away when we leave this block...
+  }
 
-//   bool isMatch2 = (str1 == DNAStrand("ACGTAGCT"));
-//   REQUIRE(isMatch2);
-// }
+  bool isMatch2 = (str1 == DNAStrand("ACGTAGCT"));
+  REQUIRE(isMatch2);
+}
 
 // TEST_CASE("Assignment Operator")
 // {

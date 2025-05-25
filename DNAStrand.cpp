@@ -105,6 +105,16 @@ bool DNAStrand::operator==(const DNAStrand& other) const {
   return true;
 }
 
+// Copy Constructor
+DNAStrand::DNAStrand(const DNAStrand& other) {
+  this->length = other.length;
+  this->bases = new Base[length];
+
+  for (int i = 0; i < length; ++i) {
+    this->bases[i] = other.bases[i];
+  }
+}
+
 // Destructor
 DNAStrand::~DNAStrand() {
   delete[] bases;
