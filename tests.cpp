@@ -73,15 +73,15 @@ TEST_CASE("at")
   REQUIRE(exceptionsCaught == 2);
 }
 
-// TEST_CASE("toString")
-// {
-//   cout << "3: toString" << endl;
-//   DNAStrand str1("AAC");
-//   DNAStrand str2("GT");
+TEST_CASE("toString")
+{
+  cout << "3: toString" << endl;
+  DNAStrand str1("AAC");
+  DNAStrand str2("GT");
 
-//   REQUIRE(str1.toString() == "AAC");
-//   REQUIRE(str2.toString() == "GT");
-// }
+  REQUIRE(str1.toString() == "AAC");
+  REQUIRE(str2.toString() == "GT");
+}
 
 // TEST_CASE("== test 1")
 // {

@@ -67,12 +67,27 @@ DNAStrand::DNAStrand(const std::string& startingString) {
 
 }
 
+// Returns the Base at the given index
 DNAStrand::Base DNAStrand::at(int index) const {
   if (index < 0 || index >= length) {
     throw std::out_of_range("Index is less than 0 or too large");
   }
-  
+
   return bases[index];
+}
+
+// Returns string form of this DNAStrand
+std::string DNAStrand::toString() const {
+  std::string stringForm = "";
+
+  char c;
+
+  for (int i = 0; i < length; ++i) {
+    c = baseToChar(bases[i]);
+    stringForm += c;
+  }
+
+  return stringForm;
 }
 
 // Destructor
