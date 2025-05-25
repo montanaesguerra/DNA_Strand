@@ -115,6 +115,26 @@ DNAStrand::DNAStrand(const DNAStrand& other) {
   }
 }
 
+// Assignment Operator
+DNAStrand& DNAStrand::operator=(const DNAStrand& other) {
+  if (this == &other) {
+    return *this;
+  }
+
+  // Clean up
+  delete[] bases;
+
+  // Copy new values
+  length = other.length;
+  bases = new Base[length];
+
+  for (int i = 0; i < length; ++i) {
+    bases[i] = other.bases[i];
+  }
+
+  return *this;
+}
+
 // Destructor
 DNAStrand::~DNAStrand() {
   delete[] bases;

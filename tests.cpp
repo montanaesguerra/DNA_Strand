@@ -130,32 +130,32 @@ TEST_CASE("Copy constructor")
   REQUIRE(isMatch2);
 }
 
-// TEST_CASE("Assignment Operator")
-// {
-//   cout << "6: Assignment Operator..." << endl;
-//   DNAStrand str1("ACGTAGCT");
+TEST_CASE("Assignment Operator")
+{
+  cout << "6: Assignment Operator..." << endl;
+  DNAStrand str1("ACGTAGCT");
 
-//   {
-//     // new scope
-//     DNAStrand str2("AA");
-//     str2 = str1; // Use assignment op
+  {
+    // new scope
+    DNAStrand str2("AA");
+    str2 = str1; // Use assignment op
 
-//     bool isMatch = (str2 == DNAStrand("ACGTAGCT"));
-//     REQUIRE(isMatch);
-//     // str2 goes away when we leave this block...
-//   }
+    bool isMatch = (str2 == DNAStrand("ACGTAGCT"));
+    REQUIRE(isMatch);
+    // str2 goes away when we leave this block...
+  }
 
-//   // Make sure str1 was not changed
-//   bool isMatch2 = (str1 == DNAStrand("ACGTAGCT"));
-//   REQUIRE(isMatch2);
+  // Make sure str1 was not changed
+  bool isMatch2 = (str1 == DNAStrand("ACGTAGCT"));
+  REQUIRE(isMatch2);
 
-//   // Verify self-assignment does no harm:
-//   {
-//     str1 = str1;
-//   }
-//   bool isMatch3 = (str1 == DNAStrand("ACGTAGCT"));
-//   REQUIRE(isMatch3);
-// }
+  // Verify self-assignment does no harm:
+  {
+    str1 = str1;
+  }
+  bool isMatch3 = (str1 == DNAStrand("ACGTAGCT"));
+  REQUIRE(isMatch3);
+}
 
 // TEST_CASE("operator+")
 // {
