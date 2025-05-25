@@ -187,49 +187,49 @@ TEST_CASE("getComplement")
   REQUIRE(isMatch2);
 }
 
-// TEST_CASE("substr")
-// {
-//   cout << "9: substr..." << endl;
-//   DNAStrand str1("AACCGGTT");
+TEST_CASE("substr")
+{
+  cout << "9: substr..." << endl;
+  DNAStrand str1("AACCGGTT");
 
-//   DNAStrand str2 = str1.substr(0, 1);
-//   bool isMatch2 = (str2 == DNAStrand("A"));
-//   REQUIRE(isMatch2);
+  DNAStrand str2 = str1.substr(0, 1);
+  bool isMatch2 = (str2 == DNAStrand("A"));
+  REQUIRE(isMatch2);
 
-//   DNAStrand str3 = str1.substr(0, 3);
-//   bool isMatch3 = (str3 == DNAStrand("AAC"));
-//   REQUIRE(isMatch3);
+  DNAStrand str3 = str1.substr(0, 3);
+  bool isMatch3 = (str3 == DNAStrand("AAC"));
+  REQUIRE(isMatch3);
 
-//   DNAStrand str4 = str1.substr(2, 4);
-//   bool isMatch4 = (str4 == DNAStrand("CCGG"));
-//   REQUIRE(isMatch4);
+  DNAStrand str4 = str1.substr(2, 4);
+  bool isMatch4 = (str4 == DNAStrand("CCGG"));
+  REQUIRE(isMatch4);
 
-//   DNAStrand str5 = str1.substr(2, 6);
-//   bool isMatch5 = (str5 == DNAStrand("CCGGTT"));
-//   REQUIRE(isMatch5);
+  DNAStrand str5 = str1.substr(2, 6);
+  bool isMatch5 = (str5 == DNAStrand("CCGGTT"));
+  REQUIRE(isMatch5);
 
-//   int exceptionsCaught = 0;
+  int exceptionsCaught = 0;
 
-//   try {
-//     // Check bad start
-//     str1.substr(-1, 4);
-//   } catch (out_of_range& e) {
-//     exceptionsCaught++;
-//   }
+  try {
+    // Check bad start
+    str1.substr(-1, 4);
+  } catch (out_of_range& e) {
+    exceptionsCaught++;
+  }
 
-//   try {
-//     // Check bad length
-//     str1.substr(3, -1);
-//   } catch (out_of_range& e) {
-//     exceptionsCaught++;
-//   }
+  try {
+    // Check bad length
+    str1.substr(3, -1);
+  } catch (out_of_range& e) {
+    exceptionsCaught++;
+  }
 
-//   try {
-//     // Check start + length invalid
-//     str1.substr(3, 6);
-//   } catch (out_of_range& e) {
-//     exceptionsCaught++;
-//   }
+  try {
+    // Check start + length invalid
+    str1.substr(3, 6);
+  } catch (out_of_range& e) {
+    exceptionsCaught++;
+  }
 
-//   REQUIRE(exceptionsCaught == 3);
-// }
+  REQUIRE(exceptionsCaught == 3);
+}

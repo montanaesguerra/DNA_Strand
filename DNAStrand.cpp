@@ -184,6 +184,24 @@ DNAStrand DNAStrand::getComplement() const {
   return complement;
 }
 
+//SubStrand
+DNAStrand DNAStrand::substr(int start, int substrLength) const {
+
+  if (start < 0 || substrLength < 0 || start + substrLength > length) {
+    throw std::out_of_range("Bad Start or Bad Length Detected");
+  }
+
+  DNAStrand result("");
+  result.length = substrLength;
+  result.bases = new Base[substrLength];
+
+  for (int i = 0; i < substrLength; ++i) {
+    result.bases[i] = this->bases[start + i];
+  }
+
+  return result;
+}
+
 // Destructor
 DNAStrand::~DNAStrand() {
   delete[] bases;
