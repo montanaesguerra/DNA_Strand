@@ -47,3 +47,27 @@ int DNAStrand::getLength() const
 {
   return length;
 }
+
+// Constructor
+DNAStrand::DNAStrand(const std::string& startingString) {
+  //Set the length of DNAString
+  length = startingString.length();
+
+  //Set the Bases array to the lenth of startingString
+  bases = new Base[length];
+
+  for (int i = 0; i < length; ++i) {
+    
+    //pass each character in startingString
+    //to the Base array, converting each char to Base.
+    char c = startingString[i];
+
+    bases[i] = charToBase(c); 
+  }
+
+}
+
+// Destructor
+DNAStrand::~DNAStrand() {
+  delete[] bases;
+}
