@@ -135,6 +135,27 @@ DNAStrand& DNAStrand::operator=(const DNAStrand& other) {
   return *this;
 }
 
+//Concatenation operator
+DNAStrand DNAStrand::operator+(const DNAStrand& other) const {
+
+  DNAStrand result("");
+
+  result.length = this->length + other.length;
+  result.bases = new Base[result.length];
+
+  // Copy first strand
+  for (int i = 0; i < this->length; ++i) {
+    result.bases[i] = this->bases[i];
+  }
+
+  // Copy second strand
+  for (int i = 0; i < other.length; ++i) {
+    result.bases[this->length + i] = other.bases[i];
+  }
+
+  return result;
+}
+
 // Destructor
 DNAStrand::~DNAStrand() {
   delete[] bases;
