@@ -67,7 +67,16 @@ DNAStrand::DNAStrand(const std::string& startingString) {
 
 }
 
+DNAStrand::Base DNAStrand::at(int index) const {
+  if (index < 0 || index >= length) {
+    throw std::out_of_range("Index is less than 0 or too large");
+  }
+  
+  return bases[index];
+}
+
 // Destructor
 DNAStrand::~DNAStrand() {
   delete[] bases;
 }
+

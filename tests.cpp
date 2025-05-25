@@ -35,17 +35,17 @@ TEST_CASE("Basic Constructor, getLength")
   REQUIRE(str2.getLength() == 4);
 }
 
-// TEST_CASE("at")
-// {
-//   cout << "2a: at basics" << endl;
-//   DNAStrand str1("ACGTACGTACGT");
-//   REQUIRE(str1.at(0) == DNAStrand::A);
-//   REQUIRE(str1.at(5) == DNAStrand::C);
+TEST_CASE("at")
+{
+  cout << "2a: at basics" << endl;
+  DNAStrand str1("ACGTACGTACGT");
+  REQUIRE(str1.at(0) == DNAStrand::A);
+  REQUIRE(str1.at(5) == DNAStrand::C);
 
-//   DNAStrand str2("TTTT");
-//   REQUIRE(str2.at(0) == DNAStrand::T);
-//   REQUIRE(str2.at(2) == DNAStrand::T);
-// }
+  DNAStrand str2("TTTT");
+  REQUIRE(str2.at(0) == DNAStrand::T);
+  REQUIRE(str2.at(2) == DNAStrand::T);
+}
 
 // TEST_CASE("at")
 // {

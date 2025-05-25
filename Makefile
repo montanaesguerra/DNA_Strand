@@ -19,4 +19,4 @@ tests.exe: $(TEST_FILES) $(HEADERS)
 
 .PHONY: clean
 clean:
-	rm -f tests.exe
+	rm -f *.o tests.exe
