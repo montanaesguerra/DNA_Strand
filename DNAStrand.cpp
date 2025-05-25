@@ -156,6 +156,34 @@ DNAStrand DNAStrand::operator+(const DNAStrand& other) const {
   return result;
 }
 
+// getComplement
+DNAStrand DNAStrand::getComplement() const {
+  DNAStrand complement("");
+  complement.length = this->length;
+  complement.bases = new Base[complement.length];
+
+  for (int i = 0; i < length; ++i) {
+    switch (bases[i]) {
+      case A:
+        complement.bases[i] = T;
+        break;
+      
+      case T:
+        complement.bases[i] = A;
+        break;
+
+      case C:
+        complement.bases[i] = G;
+        break;
+      
+      case G:
+        complement.bases[i] = C;
+        break;
+    }
+  }
+  return complement;
+}
+
 // Destructor
 DNAStrand::~DNAStrand() {
   delete[] bases;
